@@ -11,7 +11,7 @@
 
 #import "MF_Base64Additions.h"
 
-@implementation MF_Base64Codec
+@implementation TDMF_Base64Codec
 +(NSData *)dataFromBase64String:(NSString *)encoding
 {
     NSData *data = nil;
@@ -184,11 +184,11 @@
 -(NSString *)base64String
 {
     NSData *utf8encoding = [self dataUsingEncoding:NSUTF8StringEncoding];
-    return [MF_Base64Codec base64StringFromData:utf8encoding];
+    return [TDMF_Base64Codec base64StringFromData:utf8encoding];
 }
 +(NSString *)stringFromBase64String:(NSString *)base64String
 {
-    NSData *utf8encoding = [MF_Base64Codec dataFromBase64String:base64String];
+    NSData *utf8encoding = [TDMF_Base64Codec dataFromBase64String:base64String];
     return [[NSString alloc] initWithData:utf8encoding encoding:NSUTF8StringEncoding];
 }
 @end
@@ -196,10 +196,10 @@
 @implementation NSData (Base64Addition)
 +(NSData *)dataWithBase64String:(NSString *)base64String
 {
-    return [MF_Base64Codec dataFromBase64String:base64String];
+    return [TDMF_Base64Codec dataFromBase64String:base64String];
 }
 -(NSString *)base64String
 {
-    return [MF_Base64Codec base64StringFromData:self];
+    return [TDMF_Base64Codec base64StringFromData:self];
 }
 @end

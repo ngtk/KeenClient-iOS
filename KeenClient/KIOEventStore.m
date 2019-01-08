@@ -672,7 +672,7 @@ static NSString *encKey = nil;
         encodeded = [data base64Encoding]; // iOS6 and prior
     }
      */
-    encodeded = [MF_Base64Codec base64StringFromData:data];
+    encodeded = [TDMF_Base64Codec base64StringFromData:data];
     return encodeded;
 }
 
@@ -685,7 +685,7 @@ static NSString *encKey = nil;
         decodeded = [[NSData alloc] initWithBase64Encoding:data];
     }
      */
-    decodeded = [MF_Base64Codec dataFromBase64String:data];
+    decodeded = [TDMF_Base64Codec dataFromBase64String:data];
     return decodeded;
 }
 
